@@ -1,0 +1,732 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "nav main";
+  font-family: sans-serif;
+}
+.nav {
+  display: grid;
+  grid-area: "nav";
+  grid-template-rows: 100px 30% 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "icon"
+    "home"
+    "settings";
+  height: 1fr;
+  background-color: rgb(1, 24, 42);
+}
+.icon {
+  grid-area: "icon";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  color: rgb(2, 197, 241);
+}
+.home {
+  grid-area: "home";
+  display: flex;
+  flex-direction: column;
+}
+.home form button {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  padding: 4px;
+  background: none;
+  outline: none;
+  color: rgb(2, 197, 241);
+  font-family: sans-serif;
+  width: 100%;
+  height: 40px;
+  font-size: 1.2rem;
+  border-style: none;
+  cursor: pointer;
+}
+.home form img {
+  height: 20px;
+  width: 20px;
+  margin-top: 2px;
+}
+.settings {
+  grid-area: "settings";
+  display: flex;
+  flex-direction: column;
+}
+.settings form button {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  padding: 4px;
+  background: none;
+  outline: none;
+  color: rgb(2, 197, 241);
+  font-family: sans-serif;
+  width: 100%;
+  height: 40px;
+  font-size: 1.2rem;
+  border-style: none;
+  cursor: pointer;
+}
+.settings form img {
+  height: 20px;
+  width: 20px;
+  margin-top: 4px;
+}
+.main {
+  display: grid;
+  grid-template-rows: 160px 1fr;
+  grid-template-areas:
+    "header"
+    "content";
+}
+.content {
+  grid-area: "content";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "projects announcements-trending";
+  background-color: rgb(219, 218, 228);
+}
+.projects {
+  grid-area: "projects";
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "projects-header"
+    "projects-cards";
+}
+.projects-header {
+  grid-area: "projects-header";
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.projects-header h3 {
+  font-size: 1.2rem;
+  margin-left: 40px;
+}
+.projects-cards {
+  grid-area: "projects-cards";
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "card-1 card-2"
+    "card-3 card-4"
+    "card-5 card-6";
+}
+.card-1 {
+  grid-area: "card-1";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 40px;
+}
+.c1-content {
+  grid-area: "card-1";
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 10px solid rgb(55, 157, 201);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.c1-text {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.c1-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.c1-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.favorite {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.favorite input {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border-style: none;
+  background-color: white;
+}
+.favorite img {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+.view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.view input {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border-style: none;
+  background-color: rgb(255, 255, 255);
+}
+.view img {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+.share {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.share input {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border-style: none;
+  background-color: rgb(255, 255, 255);
+}
+.share img {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+.c1-text p {
+  font-size: 0.8rem;
+  color: rgb(100, 100, 100);
+}
+.c2-text p {
+  font-size: 0.8rem;
+  color: rgb(100, 100, 100);
+}
+.c3-text p {
+  font-size: 0.8rem;
+  color: rgb(100, 100, 100);
+}
+.c4-text p {
+  font-size: 0.8rem;
+  color: rgb(100, 100, 100);
+}
+.c5-text p {
+  font-size: 0.8rem;
+  color: rgb(100, 100, 100);
+}
+.c6-text p {
+  font-size: 0.8rem;
+  color: rgb(100, 100, 100);
+}
+.card-2 {
+  grid-area: "card-2";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 20px;
+}
+.c2-content {
+  grid-area: "card-1";
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 10px solid rgb(55, 157, 201);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.c2-text {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.c2-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.c2-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.card-3 {
+  grid-area: "card-3";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 40px;
+}
+.c3-content {
+  grid-area: "card-3";
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 10px solid rgb(55, 157, 201);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.c3-text {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.c3-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.c3-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.card-4 {
+  grid-area: "card-4";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 20px;
+}
+.c4-content {
+  grid-area: "card-4";
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 10px solid rgb(55, 157, 201);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.c4-text {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.c4-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.c4-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.card-5 {
+  grid-area: "card-5";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 40px;
+}
+.c5-content {
+  grid-area: "card-5";
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 10px solid rgb(55, 157, 201);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.c5-text {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.c5-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.c5-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.card-6 {
+  grid-area: "card-6";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 20px;
+}
+.c6-content {
+  grid-area: "card-6";
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 10px solid rgb(55, 157, 201);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.c6-text {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.c6-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.c6-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.announcements-trending {
+  grid-area: "announcements-trending";
+  display: grid;
+  grid-template-rows: 50px 300px 50px 1fr;
+  grid-template-areas:
+    "announcements-header"
+    "announcements"
+    "trending-header"
+    "trending";
+}
+.announcements-header {
+  grid-area: "announcements-header";
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.announcements-header h3 {
+  font-size: 1.2rem;
+}
+.announcements-card {
+  grid-area: "announcements";
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  height: 100%;
+  width: 100%;
+}
+.announcements-content {
+  grid-area: "announcements";
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+  height: 250px;
+  width: 550px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 10px solid rgb(55, 157, 201);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.announcements-content h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.announcements-content p {
+  font-size: 0.8rem;
+  color: rgb(100, 100, 100);
+  margin-bottom: 10px;
+}
+.announcements-text {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.trending-header {
+  grid-area: "trending-header";
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.trending-card {
+  grid-area: "trending";
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  height: 100%;
+  width: 100%;
+}
+.trending-content {
+  grid-area: "announcements";
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "userpic-1 username-1"
+    "userpic-2 username-2"
+    "userpic-3 username-3";
+  margin-top: 22px;
+  height: 250px;
+  width: 550px;
+  background-color: white;
+  border-radius: 10px;
+  border-left: 10px solid rgb(55, 157, 201);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.userpic-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userpic-1 img {
+  height: 60px;
+  width: 60px;
+}
+.username-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.username-1 h3 {
+  font-size: 1.3rem;
+  margin-left: 8px;
+}
+.username-1 p {
+  margin-left: 8px;
+  margin-top: 4px;
+  color: rgb(79, 79, 79);
+}
+.userpic-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userpic-2 img {
+  height: 60px;
+  width: 60px;
+}
+.username-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.username-2 h3 {
+  font-size: 1.3rem;
+  margin-left: 8px;
+}
+.username-2 p {
+  margin-left: 8px;
+  margin-top: 4px;
+  color: rgb(79, 79, 79);
+}
+.userpic-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.userpic-3 img {
+  height: 60px;
+  width: 60px;
+}
+.username-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.username-3 h3 {
+  font-size: 1.3rem;
+  margin-left: 8px;
+}
+.username-3 p {
+  margin-left: 8px;
+  margin-top: 4px;
+  color: rgb(79, 79, 79);
+}
+.header {
+  grid-area: "header";
+  height: 1fr;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+    "search"
+    "profile";
+}
+.search {
+  grid-area: "search";
+  display: grid;
+  grid-template-rows: none;
+  grid-template-columns: 1fr 400px;
+  grid-template-areas: "search-bar profile-icon";
+}
+.search-bar {
+  grid-area: "search-bar";
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+.search-bar input {
+  border-radius: 24px;
+  border: 0;
+  background-color: rgb(221, 221, 221);
+  margin-left: 40px;
+  width: 600px;
+  height: 20px;
+  padding: 8px;
+}
+.search-bar input,
+input ::placeholder {
+  font-size: 0.8rem;
+  padding-left: 40px;
+}
+.search-bar-icon {
+  position: relative;
+}
+.search-bar-icon img {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left: 42px;
+}
+.profile-icon {
+  grid-area: "profile-icon";
+  display: flex;
+  align-items: center;
+}
+.profile {
+  grid-area: "profile";
+  display: grid;
+  grid-template-columns: 120px 1fr 800px;
+  grid-template-areas: "profile-user user-name dash-buttons";
+}
+.profile-user {
+  grid-area: "profile-user";
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.user-name {
+  grid-area: "user-name";
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  padding-left: 20px;
+}
+.dash-buttons {
+  grid-area: "dash-buttons";
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin-right: 64px;
+}
+.dash-buttons form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.dash-buttons form button {
+  width: 100px;
+  height: 40px;
+  background-color: rgb(2, 197, 241);
+  color: white;
+  border-radius: 28px;
+  border-style: none;
+  font-size: 1rem;
+  margin: 12px;
+  cursor: pointer;
+}
+.profile-user img {
+  height: 60px;
+  width: 60px;
+}
+.nav-icon {
+  height: 20px;
+  width: 20px;
+  margin: 4px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 0;
+}
+.notif-icon img {
+  height: 24px;
+  width: 24px;
+  padding: 8px;
+}
+.user-icon {
+  display: flex;
+  align-items: center;
+}
+.user-icon h3 {
+  padding-left: 14px;
+}
+.user-icon img {
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+}
+img {
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  height: 100%;
+}
